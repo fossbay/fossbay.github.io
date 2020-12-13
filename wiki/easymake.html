@@ -4,7 +4,7 @@
 <head>
     <title>Easymake | GNU Make and CMake altenative</title>
 </head>
-<link rel="stylesheet" href="stylesheets/styles.css">
+<link rel="stylesheet" href="../stylesheets/styles.css">
 
 <body>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +22,10 @@
                     <li class="fade"><a href="#advancedbuild">More about build files</a></li>
                         <hr style="border:none;">
                     <li class="fade"><a href="#jsonval">What does each value mean?</a></li>
+                        <hr style="border:none;">
+                    <li class="fade"><a href="#init">Easymake init</a></li>
+                        <hr style="border:none;">
+                    <li class="fade"><a href="#targets">Targets</a></li>
                         <hr style="border:none;">
                 </ul>
             </nav>
@@ -170,6 +174,29 @@
             
             <code>"compiler_options": ["-Wall"]</code><br>
             
+            <br>
+            <br>
+
+            <h1 id="init">Easymake init</h1>
+            
+            <p>As of version 0.2, you can now easily create your own build files by running <span style="background-color:  #0f0f0f;">$ easymake init</span>!</p>
+            
+            <p>This will run you through a guided prompt on naming, source files, includes, targets, and anything else we support.</p>
+            
+            
+            <br>
+            <br>
+
+            <h1 id="targets">Targets</h1>
+
+            <p>You can run different build targets, completely configurable by the user. These targets override the global options, such as output, source, includes, and compiler arguments.</p>
+            
+            <p>An example of a build file with targets can be found <a href="https://github.com/Cleanware/easymake/blob/main/build.ezmk">here</a>.</p>
+
+            <p>These can be used to support different compilers, different platforms, or even just having different debug and release builds in one easy command.</p>
+
+            <p>You can run a target by running <span style="background-color:  #0f0f0f;">$ easymake [target name]</span></p>
+
             <br><br><br><br><br><br>
             <footer>
                 <a href="index.html">Main Page</a>
