@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Easymake | GNU Make and CMake altenative</title>
+</head>
+<link rel="stylesheet" href="stylesheets/styles.css">
+
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <header>
+        <h2 class="fade">Easymake wiki</h2>
+        <a href="index.html">Back</a>
+    </header>
+    <section class="slide">
+            <nav>
+                <ul>
+                    <li class="fade"><a href="#Compiling">Compiling</a></li>
+                        <hr style="border:none;">
+                    <li class="fade"><a href="#first">First build file</a></li>
+                        <hr style="border:none;">
+                    <li class="fade"><a href="#advancedbuild">More about build files</a></li>
+                        <hr style="border:none;">
+                    <li class="fade"><a href="#jsonval">What does each value mean?</a></li>
+                        <hr style="border:none;">
+                </ul>
+            </nav>
+        
+
+        <article>
+            
+            <h1 id="Compiling">Compiling it</h1>
+            
+            <p>You will first have to get the source on the <a href="https://github.com/undersquire/easymake">Github repo</a></p>
+            
+            <p>Now open a terminal and cd to the directory where you cloned/extracted the source code</p>
+            
+            <p>Now to compile it follow these commands:</p></br>
+            
+            <code>
+                <strong>GCC:</strong></br>
+                gcc src/easymake.c -Iinclude -s -O3 -o easymake<br><br>
+                <strong>TCC:</strong></br>
+                tcc src/easymake.c -Iinclude -O3 -o easymake<br><br>
+                <strong>CLANG:</strong></br>
+                clang src/easymake.c -Iinclude -O3 -o easymake<br><br>
+                <strong>MSVC:</strong></br>
+                    cl src/easymake.c /I include /O2  <br>
+            </code><br>
+            
+            <p>You can add Easymake to your environment variables to access it from anywhere on your system.</p><br>
+            
+            <br>
+            <br>
+            
+            <h1 id="first">Your first build file</h1>
+            
+            <p>Once you've compiled Easymake, you're ready to start migrating your project!</p>
+            
+            <p>Easymake build files are JSON files with the .ezmk extension. Anyone familiar with basic JSON can write one with ease.</p>
+            
+            <p>The default build file should be titles <span style="background-color:  #0f0f0f;">build.ezmk</span>. If you opt to use a different name, you must pass the <span style="background-color:  #0f0f0f;">-f [filename]</span> argument.</p><br>
+            
+            <code>
+            { <br>
+            	&nbsp; "project": "easymake",<br>
+            	&nbsp; "compiler": "gcc",<br>
+            	&nbsp; "output": "easymake",<br>
+            	&nbsp; "includes": ["include"],<br>
+            	&nbsp; "sources": ["src/easymake.c"],<br>
+            	&nbsp; "compiler_options": ["-s", "-O3"]<br>
+            }
+            </code><br>
+            
+            <p>To execute the build file, simply run <span style="background-color:  #0f0f0f;">$ easymake</span>. This will output your binary to the <strong>output</strong> location.</p>
+            
+            <p>If you've opted to use a different filename, run <span style="background-color:  #0f0f0f;">$ easymake -f [filename].ezmk</span>, which will result in the same output.</p><br>
+            
+            <br>
+            <br>
+            
+            <h1 id="advancedbuild">More about build files</h1>
+            
+            <p>On includes, sources and compiler options you can also do a array</p>
+            
+            <p>like you do on the compiler_options of the example</p>
+            
+            <p>heres an example:</p><br>
+                <code>
+                {   <br>
+                    &nbsp; "project": "easymake",<br>
+                    &nbsp; "compiler": "gcc",<br>
+                    &nbsp; "output": "easymake",<br>
+                    &nbsp; "includes": ["include", "path/to/includes"],<br>
+                    &nbsp; "sources": ["src/easymake.c", "path/to/source/file.c"],<br>
+                    &nbsp; "compiler_options": ["-s", "-O3"]<br>
+                }
+                </code><br>
+            
+            <br>
+            <br>
+            
+            <h1 id="jsonval">What are these values in the build file?</h1>
+            
+            <br>
+            <br>
+            
+            <h2>project</h2>
+
+            <p>This is the title of your project. As of now, it is simply for organizational purposed, but it may be used later.</p>
+            
+            <p>Example:</p><br>
+            
+            <code>"project": "project name"</code><br>
+            
+            <br>
+            <br>
+            
+            <h2>compiler</h2>
+            
+            <p>This is your compiler, the initial command Easymake will run. This is not limited to just C either! <br> This should work with any compilers, such as TCC, MSVC, or even other languages.</p>
+            
+            <p>Example:</p><br>
+            
+            <code>"compiler": "g++"</code><br>
+            
+            <br>
+            <br>
+            
+            <h2>output</h2>
+            
+            <p>This is the name of the compiled executable. It can contain a small folder structure as well for organization.</p>
+            
+            <p>Example:</p><br>
+            
+            <code>"output": "bin/output"</code><br>
+            
+            <br>
+            <br>
+            
+            <h2>includes</h2>
+            
+            <p>This is your include path. Must be an object array, but can contain just one path if required. </p>
+            
+            <p>Example:</p><br>
+            
+            <code>"includes": ["include","/usr/include/", "path/to/idk/includes/i/guess/"]</code><br>
+            
+            <br>
+            <br>
+
+            <h2>sources</h2>
+            
+            <p>The source files to be compiled. Must be an object array, but can only contain one file if required.</p>
+            
+            <p>You can also do a entire folder by writing <span style="background-color:  #0f0f0f;">folder/*.[ext]</span></p>
+            
+            <p>Example:</p><br>
+            
+            <code>"sources": ["src/main.cpp", "src2/*.cpp"]</code><br>
+            
+            <br>
+            <br>
+            
+            <h2>compiler_options</h2>
+            
+            <p>Extra compiler flags must be passed as an object array, but can only contain one if needed.</p>
+            
+            <p>Example:</p><br>
+            
+            <code>"compiler_options": ["-Wall"]</code><br>
+            
+            <br><br><br><br><br><br>
+            <footer>
+                <a href="index.html">Main Page</a>
+            </footer>
+        
+        </article>
+    
+    </section>
+    
+    </body>
+
+</html>
