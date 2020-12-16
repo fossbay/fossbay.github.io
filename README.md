@@ -1,3 +1,3 @@
-<h1>EasySoft</h1>
+<h1>Cleanware</h1>
 <br>
-EasySoft's main webpage
+Cleanware's main webpage
