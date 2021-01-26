@@ -8,7 +8,7 @@
     to{margin: 0%}
 }  
 
-* {font-family: "Ubuntu"}
+* {font-family: "Ubuntu" !important}
 
 html {
     background-color: #000000;
