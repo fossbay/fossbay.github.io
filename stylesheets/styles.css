@@ -8,6 +8,8 @@
     to{margin: 0%}
 }  
 
+* {font-family: "Ubuntu"}
+
 html {
     background-color: #000000;
     -webkit-font-smoothing: antialiased;
@@ -61,21 +63,18 @@ header {
 
 h2 {
     color: #ffffff;
-    font-family: "Ubuntu", sans-serif;
     /* float: center; */
 }
 
 p {
     color: #ffffff;
     text-rendering: optimizeLegibility;
-    font-family: "Ubuntu", sans-serif;
     font-size: 17px;
 }
 
 li {
     color: #ffffff;
     text-rendering: optimizeLegibility;
-    font-family: "Ubuntu", sans-serif;
     font-size: 17px;
 }
 
@@ -85,7 +84,6 @@ a {
     text-align: center;
     text-decoration: none;
     font-size: 17px;
-    font-family: "Ubuntu", sans-serif;
 
 }
 
@@ -107,7 +105,6 @@ a.active {
     text-align: center;
     bottom: 0px;
     right: 0px;
-    font-family: "Ubuntu", sans-serif;
     font-size: 17px;
     color: #ffffff;
 }
