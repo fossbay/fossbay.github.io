@@ -1,6 +1,6 @@
 # fossbay.github.io
 Official Fossbay website <br>
-<a href="https://fossbay.github.io/" target="_blank">Website()</a>
+<a href="https://fossbay.github.io/" target="_blank">Official website</a>
 <br>
 <br>
 Discord:  
