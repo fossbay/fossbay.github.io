@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/Roboto-Regular.ttf') format('truetype'),
+	 url('../assets/Roboto-Medium.ttf') format('truetype'),
+	 url('../assets/Roboto-Light.ttf') format('truetype');
+    font-display: swap;
+}
+
+body
+{
+    margin: 40px auto;
+    max-width:650px;
+    line-height:1.6;
+    font-size:18px;
+    color: #ededed;
+    padding:0 10px;
+    background-color: #282a36;
+    font-family: 'Roboto';
+}
+
+a
+{
+    text-decoration: none;
+    color: #6272a4;
+}
+
+h1,h2,h3
+{
+    line-height:1.2
+}
