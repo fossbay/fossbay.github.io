@@ -23,6 +23,10 @@ a
     text-decoration: none;
     color: #6272a4;
 }
+a:hover
+{
+    text-decoration: underline;
+}
 
 h1,h2,h3
 {
