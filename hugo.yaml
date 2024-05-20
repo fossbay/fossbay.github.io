@@ -96,10 +96,10 @@ params:
     appendFilePath: true # to append file path to Edit link
 
   outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON
+    home:
+      - HTML
+      - RSS
+      - JSON
 
   # for search
   # https://fusejs.io/api/options.html
@@ -114,9 +114,6 @@ params:
     keys:
       - title
       - content
-      - summary
-      - tags
-      - categories
 menu:
   main:
     - identifier: search
