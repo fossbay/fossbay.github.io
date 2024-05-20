@@ -12,6 +12,12 @@ minify:
   disableXML: true
   minifyOutput: true
 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: fossbay
@@ -94,12 +100,6 @@ params:
     URL: "https://github.com/fossbay/fossbay.github.io/edit/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
-
-  outputs:
-    home:
-      - HTML
-      - RSS
-      - JSON
 
   # for search
   # https://fusejs.io/api/options.html
