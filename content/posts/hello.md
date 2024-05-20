@@ -1,6 +1,6 @@
 ---
-title: "Hello, World!"
+title: "Let's have fun!"
 date: 2024-05-19T23:07:09-04:00
-description: "hello the world because why not"
+description: "An introduction to Fossbay"
 ---
-Lorem Ipsum
+Fossbay is a collective of like-minded nerds that aim to improve the user's quality of life through programming alone. 
